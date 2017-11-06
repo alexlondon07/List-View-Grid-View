@@ -39,23 +39,45 @@ public class Myadapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        //Copiamos la vista
-        View view = convertView;
 
-        //Inflamos la vista que nos ha llegado con nuestro layout personalizado
-        LayoutInflater layoutInflater = LayoutInflater.from(this.context);
-        view = layoutInflater.inflate(R.layout.list_item, null);
+        //View Holder Pattern
+        ViewHolder holder;
+
+        if(convertView == null){
+            /* La vista no está creada, así que la crea. Cuando vuelva a comprobar
+            * si existe, reutilizará el objeto convertView para ahorrarse la creación de un nuevo objeto.*/
+
+            //Inflamos la vista que nos ha llegado con nuestro layout personalizado
+            LayoutInflater layoutInflater = LayoutInflater.from(this.context);
+            convertView = layoutInflater.inflate(R.layout.list_item, null);
+
+            holder = new ViewHolder();
+            layoutInflater.inflate(R.layout.list_item, null);
+
+            /* Creamos un objeto de la clase ViewHolder y hacemos que cada atributo referencie
+            * a un elemento del layout. Esta referencia se mantiene y cuando reutilicemos la vista
+            * convertView ya no tendrá que llamar al método findViewById()*/
+            holder.nameTextView = (TextView) convertView.findViewById(R.id.textView);
+            convertView.setTag(holder);
+        }else{
+            holder = (ViewHolder) convertView.getTag();
+        }
+
 
         //Nos traemos el valor actual dependiente de la posicion
         String currentName = names.get(position);
-        //currentName = (String) getItem(position);
+
 
         //Referenciamos el evento a modificar y lo rellenamos
-        TextView textView = (TextView) view.findViewById(R.id.textView);
-        textView.setText(currentName);
+        holder.nameTextView.setText(currentName);
 
+        return convertView;
 
-        return view;
+    }
+
+    static class ViewHolder{
+        private TextView nameTextView;
+
 
     }
 }

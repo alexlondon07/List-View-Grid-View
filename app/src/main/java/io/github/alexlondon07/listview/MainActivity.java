@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -33,12 +32,28 @@ public class MainActivity extends AppCompatActivity {
         names.add("Jesus Londoño");
         names.add("Daniela Martinez");
         names.add("Isabel");
+        names.add("Alexander Londoño");
+        names.add("Emiliana Londoño");
+        names.add("Estefany Martinez");
+        names.add("Alejandro Londoño");
+        names.add("Aracelly Espejo");
+        names.add("Jesus Londoño");
+        names.add("Daniela Martinez");
+        names.add("Isabel");
+        names.add("Alexander Londoño");
+        names.add("Emiliana Londoño");
+        names.add("Estefany Martinez");
+        names.add("Alejandro Londoño");
+        names.add("Aracelly Espejo");
+        names.add("Jesus Londoño");
+        names.add("Daniela Martinez");
+        names.add("Isabel");
 
         //Adaptador, forma visual en que mostramos nuestros datos
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
 
         //Establecemos el adaptardor con nuestros Listview
-        listView.setAdapter(adapter);
+        //listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
