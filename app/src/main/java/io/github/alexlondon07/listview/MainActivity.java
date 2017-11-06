@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Enlazamos con nuestros adaprtador personalizado
+        Myadapter myadapter = new Myadapter(this, R.layout.list_item, names);
+        listView.setAdapter(myadapter);
 
     }
 }
+
