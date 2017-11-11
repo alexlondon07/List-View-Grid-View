@@ -10,7 +10,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity {
 
     private ListView listView;
     private List<String> names;
@@ -24,29 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Datos a mostrar
         names = new ArrayList<>();
-        names.add("Alexander Londoño");
-        names.add("Emiliana Londoño");
-        names.add("Estefany Martinez");
-        names.add("Alejandro Londoño");
-        names.add("Aracelly Espejo");
-        names.add("Jesus Londoño");
-        names.add("Daniela Martinez");
-        names.add("Isabel");
-        names.add("Alexander Londoño");
-        names.add("Emiliana Londoño");
-        names.add("Estefany Martinez");
-        names.add("Alejandro Londoño");
-        names.add("Aracelly Espejo");
-        names.add("Jesus Londoño");
-        names.add("Daniela Martinez");
-        names.add("Isabel");
-        names.add("Alexander Londoño");
-        names.add("Emiliana Londoño");
-        names.add("Estefany Martinez");
-        names.add("Alejandro Londoño");
-        names.add("Aracelly Espejo");
-        names.add("Jesus Londoño");
-        names.add("Daniela Martinez");
+        names.add("Alexander");
+        names.add("Emiliana");
+        names.add("Estefany");
+        names.add("Alejandro");
+        names.add("Aracelly ");
+        names.add("Jesus ");
+        names.add("Daniela ");
         names.add("Isabel");
 
         //Adaptador, forma visual en que mostramos nuestros datos
@@ -58,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Clicked " +names.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListActivity.this, "Clicked " +names.get(position), Toast.LENGTH_SHORT).show();
             }
         });
 

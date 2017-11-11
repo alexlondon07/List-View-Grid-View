@@ -49,7 +49,7 @@ public class Myadapter extends BaseAdapter {
 
             //Inflamos la vista que nos ha llegado con nuestro layout personalizado
             LayoutInflater layoutInflater = LayoutInflater.from(this.context);
-            convertView = layoutInflater.inflate(R.layout.list_item, null);
+            convertView = layoutInflater.inflate(this.layout, null);
 
             holder = new ViewHolder();
             layoutInflater.inflate(R.layout.list_item, null);
